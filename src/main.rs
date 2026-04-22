@@ -61,7 +61,7 @@ fn load_tasks() -> Vec<Task>{
 }
  
 fn save(tasklist: &Vec<Task>){
-    let mut file = File::create("tasks.txt").unwrap();
+    let mut file = File::create("tasks.txt").expect("create fail..");
 
     for task in tasklist {
         let line = format!("{}|{}\n",task.title,task.done);
